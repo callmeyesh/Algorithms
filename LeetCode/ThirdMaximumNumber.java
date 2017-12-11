@@ -1,3 +1,6 @@
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * Given a non-empty array of integers, return the third maximum number in this array. If it does
  * not exist, return the maximum number. The time complexity must be in O(n).
@@ -23,7 +26,38 @@
 public class ThirdMaximumNumber {
 
   public static void main(String[] args) {
+    ThirdMaximumNumber tmn = new ThirdMaximumNumber();
+    int[] nums = {3, 2, 1};
+    int thirdMax = tmn.thirdMax(nums);
+    System.out.println(thirdMax);
+  }
 
+  public int thirdMax(int[] nums) {
+    TreeSet<Integer> max = new TreeSet<>();
+    for (int i = 0; i < nums.length; i++) {
+      int value = nums[i];
+      if (max.size() == 3 && !max.contains(value)) {
+        insertIntoArray(max, value);
+      } else {
+        max.add(value);
+      }
+    }
+
+    if (max.size() < 3) {
+      return max.last();
+    } else {
+      return max.first();
+    }
+  }
+
+  public static void insertIntoArray(Set<Integer> max, int value) {
+    for (Integer i : max) {
+      if (i < value) {
+        max.remove(i);
+        max.add(value);
+        break;
+      }
+    }
   }
 
 }
