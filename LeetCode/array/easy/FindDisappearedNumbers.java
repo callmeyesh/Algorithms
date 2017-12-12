@@ -1,4 +1,4 @@
-package Array.Easy;
+package array.easy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +18,12 @@ import java.util.List;
  * @author yvenkatesh
  *
  */
-public class findDisappearedNumbers {
+public class FindDisappearedNumbers {
 
   public static void main(String[] args) {
     int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
 
-    findDisappearedNumbers fdn = new findDisappearedNumbers();
+    FindDisappearedNumbers fdn = new FindDisappearedNumbers();
     System.out.println(fdn.optimalSolution(nums));
   }
 

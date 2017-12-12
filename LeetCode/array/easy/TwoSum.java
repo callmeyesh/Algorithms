@@ -1,10 +1,10 @@
-package Array.Easy;
+package array.easy;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+/*-
  * Given an array of integers, return indices of the two numbers such that they
  * add up to a specific target. You may assume that each input would have
  * exactly one solution, and you may not use the same element twice.
@@ -29,7 +29,7 @@ public class TwoSum {
 		int[] output = new int[2];
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < nums.length; i++) {
-			if(map.containsKey(target - nums[i])) {
+			if (map.containsKey(target - nums[i])) {
 				output[0] = map.get(target - nums[i]);
 				output[1] = i;
 				return output;
