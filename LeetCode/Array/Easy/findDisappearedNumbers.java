@@ -1,3 +1,5 @@
+package Array.Easy;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +24,10 @@ public class findDisappearedNumbers {
     int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
 
     findDisappearedNumbers fdn = new findDisappearedNumbers();
-    System.out.println(fdn.findDisappearedNumbers(nums));
+    System.out.println(fdn.optimalSolution(nums));
   }
 
-  public List<Integer> findDisappearedNumbers(int[] nums) {
+  public List<Integer> optimalSolution(int[] nums) {
 
     List<Integer> missing = new ArrayList<Integer>();
 
