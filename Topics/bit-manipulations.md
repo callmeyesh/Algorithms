@@ -102,3 +102,61 @@ Having a `1` in the `k`-th bit, means that the decimal number is comprised of `2
 ```
 2^7 + 2^4 + 2^2 + 2^1 = 150
 ```
+
+## Get the i'th bit
+How can we say if the 3rd bit from the left was a `1` or `0` for x = ```00101100```.
+
+Lets create a mask with only `1` in that bit and `0` in the rest. We can do that by using (1 << i) where i = 3.
+Mask = ```00100000``` (1 << 3)
+
+Now we can ***AND*** the number with the mask.
+```
+     00101100 (x)
+     00100000 (Mask)
+______________
+&  = 00100000 != 0
+______________
+```
+If the 3rd bit was a `0` the result would be a zero.
+
+## Set the i'th bit
+Setting the i'th bit is very similar to getting it. We create the exact same mask and ***OR*** it with that value.
+```
+     00001100 (x)
+     00100000 (Mask)
+______________
+|  = 00101100
+______________
+```
+
+## Clearing the i'th bit
+We need to ***AND*** it with a mask which has `1` everywhere else except the i'th spot. By doing an ***AND*** with a `0` that set value will become 0.
+
+This mask can be created by shifting `1` to the i'th position ```(i << i)``` and then negating this value ```~(i << i)```.
+```
+     00101100 (x)
+     11011111 (Mask)
+______________
+&  = 00001100
+______________
+```
+
+## Check if exactly one bit is set
+You are essentially checking if the number is a power of `2` (x & x-1) == 0.
+
+```
+64 = 01000000 (x)
+63 = 00111111 (x-1)
+______________
+&  = 00000000  == 0
+______________
+```
+Case when some other bits are ON
+
+```
+18 = 00010010 (x)
+17 = 00010001 (x-1)
+______________
+&  = 00010000  != 0
+______________ 
+```
