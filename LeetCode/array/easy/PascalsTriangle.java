@@ -2,7 +2,6 @@ package array.easy;
 
 import java.util.ArrayList;
 import java.util.List;
-
 /*-
  *
  * Given numRows, generate the first numRows of Pascal's triangle.
@@ -24,11 +23,10 @@ public class PascalsTriangle {
     int numRows = 5;
     System.out.println(generate(5));
     System.out.println(getRow(3));
-
   }
 
   public static ArrayList<ArrayList<Integer>> generate(int numRows) {
-    ArrayList<ArrayList<Integer>> allrows = new ArrayList<ArrayList<Integer>>();
+    ArrayList<ArrayList<Integer>> allrows = new ArrayList<>();
     ArrayList<Integer> row = new ArrayList<Integer>();
     for (int i = 0; i < numRows; i++) {
       row.add(0, 1);
