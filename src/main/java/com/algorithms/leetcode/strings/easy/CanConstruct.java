@@ -20,7 +20,7 @@ package com.algorithms.leetcode.strings.easy;
  * @author yvenkatesh
  *
  */
-public class canConstruct {
+public class CanConstruct {
 
   public static void main(String[] args) {
     String ransomNote = "a";
