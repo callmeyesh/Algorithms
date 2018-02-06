@@ -43,5 +43,4 @@ public class AnagramMappings {
     return result;
   }
 
-
 }
